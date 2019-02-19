@@ -1,0 +1,171 @@
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+.main-logo {
+    max-width: 25%;
+}
+.flex {
+    display: flex;
+    margin: 0 0 5px 0;
+}
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+.caption {
+    min-width: 9em;
+}
+.margin-top-1em {
+    margin-top: 1em;
+}
+.margin-top-3em {
+    margin-top: 3em;
+}
+.fourEm {
+    width: 4em;
+}
+.center {
+    text-align: center;
+}
+.margin-left-0 {
+    margin-left: 0;
+}
+.menu {
+    position: absolute;
+    padding-top: 2em;
+    background-color: ghostwhite;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    margin-top: 1em;
+    width: 11em;
+}
+.width100 {
+    width: 100%;
+}
+.height100 {
+    height: 100%;
+}
+.flex-row-center {
+    display: flex;
+    align-items: center;
+}
+.width-20em {
+    width: 20em;
+}
+.width-fit-content {
+    width: fit-content;
+}
+.margin-right {
+    margin: 0 0 0 auto;
+}
+.report-table {
+    padding-top: 1em;
+}
+.first-td-report-table {
+    padding-right: 1em;
+}
+.border-grey {
+    border: 1px solid grey;
+}
+.padding-top-1em {
+    padding-top: 1em;
+}
+.user-fields {
+    margin: 2em 0 0 1em;
+}
+.margin-025em {
+    margin: 0.25em 0;
+}
+.grid {
+    display: grid;
+	grid-template-areas: "caption input"
+						 "caption input"
+						 "button button";
+ 
+}
+.button-grid {
+    grid-area: button;
+}
+.login-caption {
+    margin: 0 0.5em 0.5em 0;
+}
+a {
+    color: #337ab7;
+    text-decoration: none;
+}
+a:visited {
+    color: #337ab7;
+}
+a:hover {
+    text-decoration: underline;
+}
+button {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+    border-radius: 4px;
+    color: #444444;
+    display: block;
+    width: 120px;
+    font-size: 14px;
+    text-align: center;
+    height: 24px;
+    line-height: 20px;
+}
+button:hover, button:focus {
+     border-color: rgba(82, 168, 236, 0.8);
+     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
+     outline: 0 none;
+}
+input, textarea, select {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+    border-radius: 4px;
+    color: #444444;
+    padding: 0.2em;
+}
+.message-box {
+    background-color: #fffa90;
+    width: 25%;
+    height: 25%;
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+    border: 1px solid #CCCCCC;
+    opacity: 0;
+    transition: 0.6s;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.message-box-caption {
+    border: 1px solid #CCCCCC;
+    height: 1.5em;
+    display: flex;
+    user-select: none;
+    border-radius: 4px 4px 0 0;
+}
+.message-box-caption-text {
+    margin: auto 0;
+    padding-left: 5px;
+}
+.show {
+    opacity: 1;
+}
+.back-red {
+    background-color: #fddfdf;
+}
+.min-width-9em {
+    min-width: 9.5em;
+}
+@media (orientation: portrait) {
+    .main-logo {
+        max-width: 70%;
+        padding: 0.5em 0 1.5em 0;
+    }
+    .message-box {
+        width: 50%;
+    }
+}

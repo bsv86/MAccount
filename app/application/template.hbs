@@ -1,0 +1,17 @@
+{{#if Core.auth.loggedIn}}
+    <div style="display: flex;">
+        <a href="#" {{action "showUserMenu"}}><div style="color: black;">{{Core.username}}</div></a>
+        <div style="margin: 0 auto;">{{#link-to 'index'}}<img style="max-height: 3em;" src="images/law.png">{{/link-to}}</div>
+        {{#if userMenu}}
+            <div class="menu">
+                <button class="width100" {{action "logout"}}>Выйти</button>
+            </div>
+        {{/if}}
+    </div>
+{{/if}}
+
+{{outlet}}
+
+{{#each Core.messages as |message|}}
+    {{#show-message text=message}}{{/show-message}}
+{{/each}}

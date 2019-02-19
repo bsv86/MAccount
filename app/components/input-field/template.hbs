@@ -1,0 +1,28 @@
+{{#if (eq variant "dropdown")}}
+    <a href="#" {{action "toggleDropdown"}}>{{placeholder}}</a>
+    {{#if show}}
+        <ul style="background: white; position: absolute; padding: 0 0 0.25em 0.25em; margin: 0; width: 10em; border: 1px solid blue; overflow: scroll; height: 8em;">
+            {{#each list as |curValue|}}
+                <li style="display: block; margin-top: 0.25em;"><a href="#" {{action "selectValue" curValue}}>{{curValue.наименование}}</a></li>
+            {{/each}}
+        </ul>
+    {{/if}}
+{{/if}}
+
+{{#if (eq variant "select")}}
+    <select class="width100" onchange={{action "selectID" value="target.value"}}>
+        {{#unless realValue}}
+            <option disabled selected>{{placeholder}}</option>
+        {{/unless}}
+        {{#each list as |curValue|}}
+            {{#if (eq realValue curValue)}}
+                <option value={{curValue.id}} selected>{{curValue.наименование}}</option>
+            {{else}}
+                <option value={{curValue.id}}>{{curValue.наименование}}</option>
+            {{/if}}
+        {{/each}}
+        
+    </select>
+{{/if}}
+
+{{yield}}

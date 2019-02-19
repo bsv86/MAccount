@@ -1,0 +1,41 @@
+{{#if sending}}
+    <div class="center"><img style="height: 25vh; margin-top: 1em;" alt="Загрузка..." src="images/loading.gif"></div>
+{{else}}
+    <div style="display: flex; flex-direction: column; width: fit-content; margin-top: 1em;">
+        <div class="flex">
+            <div class="caption">Категория:</div>
+            <select class="width100" onchange={{action (mut category) value="target.value"}}>
+                {{#unless value}}
+                    <option disabled selected>Выберите категорию</option>
+                {{/unless}}
+                {{#each Core.leadCategories as |leadCategory|}}
+                    {{#if (eq category leadCategory)}}
+                        <option value={{leadCategory}} selected>{{leadCategory}}</option>
+                    {{else}}
+                        <option>{{leadCategory}}</option>
+                    {{/if}}
+                {{/each}}
+            </select>
+        </div>
+        <div class="flex">
+            <div class="caption">Дорожный патруль:</div>{{input type="checkbox" class="margin-left-0" checked=roadPatrol}}
+        </div>
+        <div class="flex">
+            <div class="caption">ФИО клиента:</div>{{input class=(if name "width100" "width100 back-red") value=name}}
+        </div>
+        <div class="flex">
+            <div class="caption">Номер телефона:</div>{{input class=(if phone "width100" "width100 back-red") value=phone}}
+        </div>
+        <div class="flex">
+            <div class="caption">Комментарий:</div>{{textarea rows=10 class="width100" value=comment}}
+        </div>
+        <div class="flex">
+            <div class="caption">&nbsp;</div>
+            <input class="width100" type="file" id="sendingFiles" multiple />
+        </div>
+        <div class="flex margin-top-1em">
+            <div class="caption">&nbsp;</div>
+            <button class="width100" {{action "createLead"}}>Отправить</button>
+        </div>
+    </div>
+{{/if}}
