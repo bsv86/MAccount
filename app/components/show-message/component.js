@@ -14,7 +14,7 @@ export default Component.extend({
 
     showMessage() {
         this.set('show', true);
-        later(this, 'closeOnWait', 2000);
+        later(this, 'closeOnWait', 2500);
     },
 
     closeOnWait() {

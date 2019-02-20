@@ -60,7 +60,10 @@ export default Controller.extend({
                 return;
             }
 
-            this.currentUser.save();
+            this.currentUser.save().then(
+                function () { this.get('Core').addMessage('Данные сохранены!', '', 'green'); }.bind(this),
+                function () { this.get('Core').addMessage('Произошла ошибка. Данные не сохранены!', '', 'red'); }.bind(this)
+            );
         }
 
     }
