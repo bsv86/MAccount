@@ -128,7 +128,6 @@ input, textarea, select {
     padding: 0.2em;
 }
 .message-box {
-    background-color: #fffa90;
     width: 25%;
     height: 25%;
     position: absolute;
@@ -139,6 +138,15 @@ input, textarea, select {
     transition: 0.6s;
     border-radius: 4px;
     cursor: pointer;
+}
+.yellow {
+    background-color: #fffa90;
+}
+.red {
+    background-color: #fddfdf;
+}
+.green {
+background-color: #00FF99;
 }
 .message-box-caption {
     border: 1px solid #CCCCCC;

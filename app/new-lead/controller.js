@@ -44,10 +44,13 @@ export default Controller.extend({
                 function (data) {
                     let sendingData = { category: this.category, name: this.name, phone: this.phone, comment: this.comment, roadPatrol: this.roadPatrol, files: data };
                     this.get('Core').query(null, 'createLead', 'post', sendingData).then(
-                        function () { this.set('sending', false); }.bind(this),
                         function () {
                             this.set('sending', false);
-                            this.get('Core').addMessage('Произошла ошибка. Данные не сохранены!');
+                            this.get('Core').addMessage('Данные сохранены!', '', 'green');
+                        }.bind(this),
+                        function () {
+                            this.set('sending', false);
+                            this.get('Core').addMessage('Произошла ошибка. Данные не сохранены!', '', 'red');
                         }.bind(this)
                     );
                 }.bind(this)

@@ -4,8 +4,9 @@ import { later } from '@ember/runloop';
 export default Component.extend({
 
     text: '',
-    caption: 'Внимание!',
+    caption: '',
     show: false,
+    className: '',
 
     didInsertElement() {
         later(this, 'showMessage', 100)
@@ -13,6 +14,12 @@ export default Component.extend({
 
     showMessage() {
         this.set('show', true);
+        later(this, 'closeOnWait', 2000);
+    },
+
+    closeOnWait() {
+        this.set('show', false);
+        later(this, 'close', 700);
     },
 
     close() {

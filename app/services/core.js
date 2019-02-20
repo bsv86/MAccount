@@ -19,18 +19,20 @@ export default Service.extend({
         return getOwner(this).lookup('adapter:application').ajax(host + urlInHost, method, { data: data, headers: headers });
     },
 
-    addMessage(text) {
+    addMessage(text, caption, className) {
+        let message = { text: text, caption: caption || 'Внимание!', className: className || 'yellow' }
+
         if (this.messages) {
-            this.messages.pushObject(text);
+            this.messages.pushObject(message);
         } else {
-            this.set('messages', [text]);
+            this.set('messages', [message]);
         }
     },
 
     deleteMessage(text) {
 
         let newMessages = this.messages.filter(function (ele) {
-            return ele != text;
+            return ele.text != text;
         });
 
         this.set('messages', newMessages);

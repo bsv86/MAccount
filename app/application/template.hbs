@@ -13,5 +13,5 @@
 {{outlet}}
 
 {{#each Core.messages as |message|}}
-    {{#show-message text=message}}{{/show-message}}
+    {{#show-message text=message.text caption=message.caption className=message.className}}{{/show-message}}
 {{/each}}
