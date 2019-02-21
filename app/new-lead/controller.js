@@ -46,7 +46,12 @@ export default Controller.extend({
                     this.get('Core').query(null, 'createLead', 'post', sendingData).then(
                         function () {
                             this.set('sending', false);
-                            this.get('Core').addMessage('Данные сохранены!', '', 'green');
+                            this.get('Core').addMessage('Заявка сохранена!', false, 'green');
+                            this.set('phone');
+                            this.set('name');
+                            this.set('category', 'НО');
+                            this.set('comment');
+                            this.set('roadPatrol', false);
                         }.bind(this),
                         function () {
                             this.set('sending', false);

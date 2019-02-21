@@ -59,10 +59,21 @@ html, body {
     margin: 0 0 0 auto;
 }
 .report-table {
-    padding-top: 1em;
+    display: grid;
+    margin-top: 2em;
+    grid-template-columns: max-content max-content;
 }
-.first-td-report-table {
-    padding-right: 1em;
+.report-table div {
+    margin-top: 0.7em;
+    user-select: none;
+}
+.report-table-lead {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    padding-left: 2em;
+}
+.margin-left-1em {
+    margin-left: 1em;
 }
 .border-grey {
     border: 1px solid grey;
@@ -138,6 +149,12 @@ input, textarea, select {
     transition: 0.6s;
     border-radius: 4px;
     cursor: pointer;
+}
+.pointer {
+    cursor: pointer;
+}
+.color-link {
+    color: #337ab7;
 }
 .yellow {
     background-color: #fffa90;

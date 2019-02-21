@@ -1,7 +1,9 @@
 <div {{action "close"}} class="message-box {{className}} {{if show 'show'}}">
-    <div class="message-box-caption">
-        <div class="message-box-caption-text">{{caption}}</div>
-    </div>
+    {{#if caption}}
+        <div class="message-box-caption">
+            <div class="message-box-caption-text">{{caption}}</div>
+        </div>
+    {{/if}}
     <div style="padding: 5px 0 0 5px;">
         {{text}}
     </div>

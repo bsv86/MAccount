@@ -2,6 +2,7 @@ import Controller from '@ember/controller';
 import { later } from '@ember/runloop';
 import { cancel } from '@ember/runloop';
 import { observer } from '@ember/object';
+import { set } from '@ember/object';
 
 export default Controller.extend({
 
@@ -48,6 +49,11 @@ export default Controller.extend({
             }.bind(this),
             function () { this.set('loading', false); }.bind(this)
         );
+    },
+    actions: {
+        showLeads(data) {
+            set(data, 'showLeads', !data.showLeads);
+        }
     }
 
 });

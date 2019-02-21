@@ -7,13 +7,21 @@
         <div class="margin-top-3em">Отчет с {{input type="date" value=reportFrom}} по {{input type="date" value=reportTo}} </div>
     </div>
 </div>
-<table class="report-table">
-    <tbody>
-        {{#each reportData as |data|}}
-            <tr>
-                <td class="first-td-report-table">{{data.type}}</td>
-                <td>{{data.qty}}</td>
-            </tr>
-        {{/each}}
-    </tbody>
-</table>
+<div class="report-table">
+    {{#each reportData as |data|}}
+        {{#if data.leads}}
+            <div class="pointer color-link" {{action "showLeads" data}}>{{data.type}}</div>
+            <div class="pointer color-link margin-left-1em" {{action "showLeads" data}}>{{data.qty}}</div>
+            {{#if data.showLeads}}
+                {{#each data.leads as |lead|}}
+                    <div class="report-table-lead">
+                        {{lead.name}} {{lead.phone}}
+                    </div>
+                {{/each}}
+            {{/if}}
+        {{else}}
+            <div>{{data.type}}</div>
+            <div class="margin-left-1em">{{data.qty}}</div>
+        {{/if}}
+    {{/each}}
+</div>
