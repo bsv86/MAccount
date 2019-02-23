@@ -11,6 +11,8 @@ Router.map(function () {
   this.route('new-lead');
   this.route('login');
   this.route('user-admin');
+  this.route('managers-data');
+  this.route('planing');
 });
 
 export default Router;

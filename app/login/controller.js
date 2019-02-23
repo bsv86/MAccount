@@ -8,16 +8,14 @@ export default Controller.extend({
     actions: {
         login() {
 
-            let promise = this.get('Core.auth').tryToLogin(this.username, this.password);
-            
-            promise.then(function (data) {
+            this.get('Core.auth').tryToLogin(this.username, this.password).then(function (data) {
                 if (data.success) {
                     this.set('loginFailure', false);
                     this.set('errorText', '');
                     this.set('password', '');
                     this.get('Core.auth').loginSuccess(data);
                 } else {
-                    this.get('Core').addMessage('Неправильный логин или пароль');
+                    this.get('Core').addMessage('Неправильный логин или пароль', '', 'red');
                 }
             }.bind(this));
 

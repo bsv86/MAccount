@@ -20,7 +20,8 @@ export default Service.extend({
     },
 
     addMessage(text, caption, className) {
-        if (caption == false) { caption = '' } else { caption = caption || 'Внимание!' }
+
+        if (caption === false) { caption = '' } else { caption = caption || 'Внимание!' }
         let message = { text: text, caption: caption, className: className || 'yellow' }
 
         if (this.messages) {
