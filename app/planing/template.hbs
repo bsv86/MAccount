@@ -1,1 +1,12 @@
-{{outlet}}
+<div>Планинг на&nbsp; {{input type="date" value=reportDate}}</div>
+
+<div class="report-table">
+    {{#each reportData as |data|}}
+        <div class="pointer color-link" {{action "showName" data}}>{{data.date}}</div> <div class="pointer color-link margin-left-1em" {{action "showName" data}}>{{data.address}}</div>
+        {{#if data.showName}}
+            <div class="report-table-lead">
+                {{data.name}} <a href="tel:{{data.phone}}">{{data.phone}}</a>
+            </div>
+        {{/if}}
+    {{/each}}
+</div>
