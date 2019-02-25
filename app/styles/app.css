@@ -66,6 +66,23 @@ html, body {
     margin-top: 2em;
     grid-template-columns: max-content max-content;
 }
+.planing-table {
+    display: grid;
+    margin-top: 2em;
+    grid-template-columns: max-content max-content max-content;
+}
+.planing-table div {
+    margin-top: auto;
+    margin-bottom: auto;
+    user-select: none;
+}
+.planing-table-name {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    padding-left: 2.6em;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+}
 .report-table div {
     margin-top: 0.7em;
     user-select: none;

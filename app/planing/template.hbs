@@ -1,10 +1,12 @@
 <div>Планинг на&nbsp; {{input type="date" value=reportDate}}</div>
 
-<div class="report-table">
+<div class="planing-table">
     {{#each reportData as |data|}}
-        <div class="pointer color-link" {{action "showName" data}}>{{data.date}}</div> <div class="pointer color-link margin-left-1em" {{action "showName" data}}>{{data.address}}</div>
+        <div><a href="yandexnavi://map_search?text={{data.address}}"><img style="max-height: 1.5em;" src="images/navi.png"></a></div>
+        <div class="pointer color-link margin-left-1em" {{action "showName" data}}>{{data.date}}</div>
+        <div class="pointer color-link margin-left-1em" {{action "showName" data}}>{{data.address}}</div>
         {{#if data.showName}}
-            <div class="report-table-lead">
+            <div class="planing-table-name">
                 {{data.name}} <a href="tel:{{data.phone}}">{{data.phone}}</a>
             </div>
         {{/if}}

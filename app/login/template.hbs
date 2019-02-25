@@ -4,7 +4,7 @@
 <div style="padding: 1em; width: fit-content; margin: 0 auto; border: 1px solid; border-radius: 20px;">
     <div class="grid">
         <div class="login-caption">Логин:</div><div>{{input class=(unless username "back-red") value=username}}</div>
-        <div class="login-caption">Пароль:</div><div>{{input class=(unless password "back-red") type="password" value=password}}</div>
+        <div class="login-caption">Пароль:</div><div>{{input class=(unless password "back-red") type="password" value=password enter=(action "login")}}</div>
         <div class="button-grid"><button {{action "login"}} class="width100">Войти</button></div>
     </div>
 </div>
