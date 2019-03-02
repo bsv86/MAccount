@@ -43,7 +43,7 @@ export default Controller.extend({
     },
 
     loadReport() {
-        this.get('Core').query(null, 'getManagersReport', 'post', { 'folder': this.get('Core.folder'), 'from': this.reportFrom, 'to': this.reportTo }).then(
+        this.Core.query(null, 'getManagersReport', 'post', { 'folder': this.get('Core.folder'), 'from': this.reportFrom, 'to': this.reportTo }).then(
             function (data) {
                 this.set('reportData', data);
             }.bind(this),

@@ -28,12 +28,12 @@ export default Controller.extend({
         createLead() {
 
             if (!this.name) {
-                this.get('Core').addMessage('Не заполнено ФИО клиента');
+                this.Core.addMessage('Не заполнено ФИО клиента');
                 return;
             }
 
             if (!this.phone) {
-                this.get('Core').addMessage('Не заполнен телефон');
+                this.Core.addMessage('Не заполнен телефон');
                 return;
             }
 
@@ -43,10 +43,10 @@ export default Controller.extend({
             Promise.all(filesArray.map(this.actions.fileToDataURL)).then(
                 function (data) {
                     let sendingData = { category: this.category, name: this.name, phone: this.phone, comment: this.comment, roadPatrol: this.roadPatrol, files: data };
-                    this.get('Core').query(null, 'createLead', 'post', sendingData).then(
+                    this.Core.query(null, 'createLead', 'post', sendingData).then(
                         function () {
                             this.set('sending', false);
-                            this.get('Core').addMessage('Заявка сохранена!', false, 'green');
+                            this.Core.addMessage('Заявка сохранена!', false, 'green');
                             this.set('phone');
                             this.set('name');
                             this.set('category', 'НО');
@@ -55,7 +55,7 @@ export default Controller.extend({
                         }.bind(this),
                         function () {
                             this.set('sending', false);
-                            this.get('Core').addMessage('Произошла ошибка. Данные не сохранены!', '', 'red');
+                            this.Core.addMessage('Произошла ошибка. Данные не сохранены!', '', 'red');
                         }.bind(this)
                     );
                 }.bind(this)

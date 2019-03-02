@@ -8,16 +8,16 @@ export default Controller.extend({
         saveData() {
 
             if (!this.foldersCount) {
-                this.get('Core').addMessage('Не указано количество папок', '', 'red');
+                this.Core.addMessage('Не указано количество папок', '', 'red');
                 return;
             }
 
-            this.get('Core').query(null, 'saveManagersData', 'post', { foldersCount: this.foldersCount, folder: this.get('Core.folder') }).then(
+            this.Core.query(null, 'saveManagersData', 'post', { foldersCount: this.foldersCount, folder: this.get('Core.folder') }).then(
                 function () {
-                    this.get('Core').addMessage('Папки записаны!', false, 'green');
+                    this.Core.addMessage('Папки записаны!', false, 'green');
                 }.bind(this),
                 function () {
-                    this.get('Core').addMessage('Произошла ошибка. Данные не сохранены!', '', 'red');
+                    this.Core.addMessage('Произошла ошибка. Данные не сохранены!', '', 'red');
                 }.bind(this)
             );
 

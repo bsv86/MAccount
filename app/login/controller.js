@@ -15,7 +15,7 @@ export default Controller.extend({
                     this.set('password', '');
                     this.get('Core.auth').loginSuccess(data);
                 } else {
-                    this.get('Core').addMessage('Неправильный логин или пароль', '', 'red');
+                    this.Core.addMessage('Неправильный логин или пароль', '', 'red');
                 }
             }.bind(this));
 

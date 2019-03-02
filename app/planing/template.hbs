@@ -7,7 +7,7 @@
         <div class="pointer color-link margin-left-1em" {{action "showName" data}}>{{data.address}}</div>
         {{#if data.showName}}
             <div class="planing-table-name">
-                {{data.name}} <a href="tel:{{data.phone}}">{{data.phone}}</a>
+                {{#link-to "ia-case" data.id}}{{data.name}} №{{data.number}}{{/link-to}}
             </div>
         {{/if}}
     {{/each}}

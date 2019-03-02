@@ -23,7 +23,7 @@ export default Component.extend({
     },
 
     close() {
-        this.get('Core').deleteMessage(this.text);
+        this.Core.deleteMessage(this.text);
     },
 
     actions: {

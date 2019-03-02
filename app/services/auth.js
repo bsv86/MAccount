@@ -13,9 +13,9 @@ export default Service.extend({
     // и переходим на страницу login
     checkAuth(previousTransition) {
 
-        if (!this.get('loggedIn')) {
+        if (!this.loggedIn) {
             if (previousTransition && previousTransition.targetName != 'auth' && previousTransition.targetName != 'login') { this.set('previousTransition', previousTransition); }
-            this.get('router').transitionTo('auth', []);
+            this.router.transitionTo('auth', []);
         }
     },
 
@@ -38,10 +38,10 @@ export default Service.extend({
     // Если аутентификация удалась, то переходим на страницу index
     // или на страницу, на которую хотели перейти
     goFromLoginPage() {
-        if (this.get('previousTransition')) {
+        if (this.previousTransition) {
             this.previousTransition.retry();
         } else {
-            this.get('router').transitionTo('index', []);
+            this.router.transitionTo('index', []);
         }
     },
 
@@ -53,7 +53,7 @@ export default Service.extend({
             this.core.set('folder');
             this.core.set('administration');
             this.core.set('leadCategories', []);
-            this.get('router').transitionTo('login', []);
+            this.router.transitionTo('login', []);
         }.bind(this));
     }
 

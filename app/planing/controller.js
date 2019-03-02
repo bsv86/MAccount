@@ -19,12 +19,26 @@ export default Controller.extend({
 
         this.initDate();
 
-        this.get('Core').query(null, 'getPlaning', 'post', { 'date': this.reportDate }).then(
+        this.Core.query(null, 'getPlaning', 'post', { 'date': this.reportDate }).then(
             function (data) {
                 this.set('reportData', data);
+                data.forEach(element => {
+                    this.store.pushPayload({
+                        document_независимаяоценка: [
+                            {
+                                id: element.id,
+                                номер: element.number,
+                                клиент_descr: element.name,
+                                адресосмотра: element.address,
+                                датаосмотра: element.datetime
+                            }
+                        ]
+                    });
+                });
+
             }.bind(this),
             function () {
-                this.get('Core').addMessage('Произошла ошибка!', '', 'red');
+                this.Core.addMessage('Произошла ошибка!', '', 'red');
             }.bind(this)
         );
     },

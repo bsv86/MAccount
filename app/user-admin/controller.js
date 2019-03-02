@@ -36,33 +36,33 @@ export default Controller.extend({
         saveCurrentUser() {
 
             if (!this.get('currentUser.наименование')) {
-                this.get('Core').addMessage('Не заполнено ФИО');
+                this.Core.addMessage('Не заполнено ФИО');
                 return;
             }
 
             if (!this.get('currentUser.логин')) {
-                this.get('Core').addMessage('Не заполнен логин');
+                this.Core.addMessage('Не заполнен логин');
                 return;
             }
 
             if (!this.get('currentUser.пароль')) {
-                this.get('Core').addMessage('Не заполнено ФИО');
+                this.Core.addMessage('Не заполнено ФИО');
                 return;
             }
 
             if (!this.get('currentUser.папка.id')) {
-                this.get('Core').addMessage('Не заполнена папка');
+                this.Core.addMessage('Не заполнена папка');
                 return;
             }
 
             if (!this.get('currentUser.город.id')) {
-                this.get('Core').addMessage('Не заполнен город');
+                this.Core.addMessage('Не заполнен город');
                 return;
             }
 
             this.currentUser.save().then(
-                function () { this.get('Core').addMessage('Данные сохранены!', '', 'green'); }.bind(this),
-                function () { this.get('Core').addMessage('Произошла ошибка. Данные не сохранены!', '', 'red'); }.bind(this)
+                function () { this.Core.addMessage('Данные сохранены!', '', 'green'); }.bind(this),
+                function () { this.Core.addMessage('Произошла ошибка. Данные не сохранены!', '', 'red'); }.bind(this)
             );
         }
 
