@@ -27,10 +27,12 @@ export default Controller.extend({
                         document_независимаяоценка: [
                             {
                                 id: element.id,
-                                номер: element.number,
-                                клиент_descr: element.name,
-                                адресосмотра: element.address,
-                                датаосмотра: element.datetime
+                                Номер: element.number,
+                                Клиент_descr: element.name,
+                                АдресОсмотра: element.address,
+                                ДатаОсмотра: element.datetime,
+                                МаркаАвто: element.marka,
+                                НомерАвто: element.gosnomer
                             }
                         ]
                     });

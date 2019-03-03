@@ -1,0 +1,18 @@
+<div class="flex-column">
+    <div class="flex margin-bottom-05em">
+        <div>
+            <input onchange={{action "addFiles"}} type="file" multiple />
+        </div>
+        <div class="margin-left-1em">
+            <button {{action onSendFiles files}}>Отправить</button>
+        </div>
+    </div>
+    <div class="flex">
+        {{#each files as |file|}}
+            <div class="flex margin-right-1em file">
+                <div class="vertical-center">{{file.name}}</div>
+                <div class="margin-left-05em pointer color-link" {{action "deleteFile" file}}>❌</div>
+            </div>
+        {{/each}}
+    </div>
+</div>

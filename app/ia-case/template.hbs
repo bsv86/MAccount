@@ -1,11 +1,23 @@
-<div class="flex-column">
-    <div>
-        №{{model.номер}}
+<div class="flex-column margin-left-1em">
+    <div class="margin-025em">
+        №{{model.Номер}}
     </div>
-    <div>
-        Клиент: {{model.клиент_descr}}
+    <div class="margin-025em">
+        Клиент: {{model.Клиент_descr}}
     </div>
-    <div>
-        Адрес осмотра: {{model.адресосмотра}}
+    <div class="margin-025em">
+        Адрес осмотра: {{model.АдресОсмотра}}
+    </div>
+    <div class="margin-025em">
+        Дата осмотра: {{model.ДатаОсмотраFormat}}
+    </div>
+    <div class="margin-025em">
+        Марка авто: {{model.МаркаАвто}}
+    </div>
+    <div class="margin-025em">
+        Номер авто: {{model.НомерАвто}}
+    </div>
+    <div class="margin-025em">
+        {{#file-uploader onSendFiles=(action "sendFiles")}}{{/file-uploader}}
     </div>
 </div>

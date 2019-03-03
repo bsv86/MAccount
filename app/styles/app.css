@@ -95,6 +95,9 @@ html, body {
 .margin-left-1em {
     margin-left: 1em;
 }
+.margin-left-05em {
+    margin-left: 0.5em;
+}
 .border-grey {
     border: 1px solid grey;
 }
@@ -208,8 +211,18 @@ background-color: #00FF99;
 .min-width-9em {
     min-width: 9.5em;
 }
-.margin-left-1em {
-    margin-left: 1em;
+.margin-right-1em {
+    margin-right: 1em;
+}
+.file {
+    border: 1px solid;
+    padding: 0.2em 0 0.2em 0.2em;
+    border-color: #CCCCCC;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
+}
+.margin-bottom-05em {
+    margin-bottom: 0.5em;
 }
 @media (orientation: portrait) {
     .main-logo {
