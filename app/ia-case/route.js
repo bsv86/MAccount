@@ -7,8 +7,7 @@ export default Route.extend({
     },
 
     model(params) {
-        let record = this.store.peekRecord('document-независимаяоценка', params.id);
-        if (record) { return record; } else { return this.store.findRecord('document-независимаяоценка', params.id); }
+        return this.store.peekRecord('document-независимаяоценка', params.id) || this.store.findRecord('document-независимаяоценка', params.id);
     }
 
 });
