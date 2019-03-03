@@ -1,9 +1,11 @@
 import Component from '@ember/component';
+import { computed } from '@ember/object';
 
 export default Component.extend({
 
     files: null,
     filesToLoad: 0,
+    readyToSend: computed('filesToLoad', 'files.[]', function () { return this.filesToLoad == 0 && this.files && this.files.length > 0; }),
 
     fileToDataURL(file, input) {
 
@@ -13,7 +15,7 @@ export default Component.extend({
 
         reader.onload = function (event, result) {
             this.files.pushObject({ name: file.name, data: result.target.result });
-            this.set('filesToLoad', this.filesToLoad - 1);
+            this.decrementProperty('filesToLoad');
 
             if (this.filesToLoad == 0) {
                 event.target.value = '';

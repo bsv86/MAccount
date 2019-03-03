@@ -1,13 +1,18 @@
 <div class="flex-column">
     <div class="flex margin-bottom-05em">
         <div>
-            <input onchange={{action "addFiles"}} type="file" multiple />
+            <div>
+                <label>
+                    <input onchange={{action "addFiles"}} type="file" multiple class="display-none">
+                    <span class="button button-span">Выберите файлы</span>
+                </label>
+            </div>
         </div>
-        <div class="margin-left-1em">
-            <button {{action onSendFiles files}}>Отправить</button>
+        <div class="margin-left-05em">
+            <button {{action onSendFiles files}} class="{{unless readyToSend 'display-none'}}">Отправить</button>
         </div>
     </div>
-    <div class="flex">
+    <div class="flex flex-wrap">
         {{#each files as |file|}}
             <div class="flex margin-right-1em file">
                 <div class="vertical-center">{{file.name}}</div>
