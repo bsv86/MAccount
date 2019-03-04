@@ -1,6 +1,6 @@
 html, body {
     height: 100%;
-    overflow: hidden;
+    overflow: scroll;
 }
 .main-logo {
     max-width: 25%;
@@ -22,6 +22,9 @@ html, body {
 .margin-top-1em {
     margin-top: 1em;
 }
+.margin-top-05em {
+    margin-top: 0.5em;
+}
 .margin-top-3em {
     margin-top: 3em;
 }
@@ -36,11 +39,11 @@ html, body {
 }
 .menu {
     position: absolute;
-    padding-top: 2em;
+    padding-top: 1.5em;
     background-color: ghostwhite;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    margin-top: 1em;
-    width: 11em;
+    margin-top: 1.5em;
+    width: 10em;
 }
 .width100 {
     width: 100%;
@@ -105,7 +108,7 @@ html, body {
     padding-top: 1em;
 }
 .user-fields {
-    margin: 2em 0 0 1em;
+    margin: 1em 0 0 1em;
 }
 .margin-025em {
     margin: 0.25em 0;
@@ -234,6 +237,18 @@ background-color: #00FF99;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+.padding-bottom-05em {
+    padding-bottom: 0.5em;
+}
+.padding-left-05em {
+    padding-left: 0.5em;
+}
+.padding-right-05em {
+    padding-right: 0.5em;
+}
+.user-select-none {
+    user-select: none;
 }
 @media (orientation: portrait) {
     .main-logo {

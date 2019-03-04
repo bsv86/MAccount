@@ -1,11 +1,10 @@
 <div class="flex">
 
     <div class="min-width-9em">
-        Пользователи:
         <div class="flex-column padding-top-1em">
             <div class="margin-025em"><a href="#" {{action "createUser"}}>Создать пользователя</a></div>
             {{#each users as |user|}}
-                <div class="margin-025em"><a href="#" {{action "selectUser" user}}>{{user.наименование}}</a></div>
+                <div class="margin-025em user-select-none"><a href="#" {{action "selectUser" user}}>{{user.наименование}}</a></div>
             {{/each}}
         </div>
     </div>

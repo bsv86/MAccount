@@ -47,7 +47,10 @@ export default Controller.extend({
             function (data) {
                 this.set('reportData', data);
             }.bind(this),
-            function () { this.set('loading', false); }.bind(this)
+            function () {
+                this.set('loading', false);
+                this.Core.addMessage('Произошла ошибка!', '', 'red');
+            }.bind(this)
         );
     },
     actions: {

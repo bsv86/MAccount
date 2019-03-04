@@ -9,9 +9,10 @@ export default Controller.extend({
 
     loadData() {
 
-        this.store.findAll('catalog-города').then(function (data) {
-            this.set('cities', data);
-        }.bind(this));
+        this.store.findAll('catalog-города').then(
+            function (data) { this.set('cities', data); }.bind(this),
+            function () { this.Core.addMessage('Произошла ошибка!', '', 'red'); }.bind(this)
+        );
 
         this.store.findAll('catalog-папки').then(function (data) {
             this.set('folders', data);
@@ -61,7 +62,7 @@ export default Controller.extend({
             }
 
             this.currentUser.save().then(
-                function () { this.Core.addMessage('Данные сохранены!', '', 'green'); }.bind(this),
+                function () { this.Core.addMessage('Данные сохранены!', false, 'green'); }.bind(this),
                 function () { this.Core.addMessage('Произошла ошибка. Данные не сохранены!', '', 'red'); }.bind(this)
             );
         }
