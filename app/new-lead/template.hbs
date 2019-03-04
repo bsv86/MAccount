@@ -9,11 +9,7 @@
                     <option disabled selected>Выберите категорию</option>
                 {{/unless}}
                 {{#each Core.leadCategories as |leadCategory|}}
-                    {{#if (eq category leadCategory)}}
-                        <option value={{leadCategory}} selected>{{leadCategory}}</option>
-                    {{else}}
-                        <option>{{leadCategory}}</option>
-                    {{/if}}
+                    <option value={{leadCategory}} selected={{eq category leadCategory}}>{{leadCategory}}</option>
                 {{/each}}
             </select>
         </div>

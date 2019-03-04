@@ -121,7 +121,6 @@ body {
 	grid-template-areas: "caption input"
 						 "caption input"
 						 "button button";
- 
 }
 .button-grid {
     grid-area: button;

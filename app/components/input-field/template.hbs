@@ -15,11 +15,7 @@
             <option disabled selected>{{placeholder}}</option>
         {{/unless}}
         {{#each list as |curValue|}}
-            {{#if (eq realValue curValue)}}
-                <option value={{curValue.id}} selected>{{curValue.наименование}}</option>
-            {{else}}
-                <option value={{curValue.id}}>{{curValue.наименование}}</option>
-            {{/if}}
+            <option value={{curValue.id}} selected={{eq realValue curValue}}>{{curValue.наименование}}</option>
         {{/each}}
         
     </select>
