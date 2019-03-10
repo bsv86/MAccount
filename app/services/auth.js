@@ -17,6 +17,7 @@ export default Service.extend({
             if (previousTransition && previousTransition.targetName != 'auth' && previousTransition.targetName != 'login') { this.set('previousTransition', previousTransition); }
             this.router.transitionTo('auth', []);
         }
+        
     },
 
     // Функция проверки логина и пароля

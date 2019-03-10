@@ -4,14 +4,7 @@
     <div style="display: flex; flex-direction: column; width: fit-content; margin-top: 1em;">
         <div class="flex">
             <div class="caption">Категория:</div>
-            <select class="width100" onchange={{action (mut category) value="target.value"}}>
-                {{#unless value}}
-                    <option disabled selected>Выберите категорию</option>
-                {{/unless}}
-                {{#each Core.leadCategories as |leadCategory|}}
-                    <option value={{leadCategory}} selected={{eq category leadCategory}}>{{leadCategory}}</option>
-                {{/each}}
-            </select>
+            {{#input-field class="width-100" tagName="" list=Core.leadCategories value=category}}{{/input-field}}
         </div>
         <div class="flex">
             <div class="caption">Дорожный патруль:</div>{{input type="checkbox" class="margin-left-0" checked=roadPatrol}}

@@ -6,7 +6,6 @@ export default Route.extend({
         if (this.get('Core.auth.loggedIn')) {
             this.transitionTo('index');
         }
-
     }
 
 });

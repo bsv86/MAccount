@@ -1,10 +1,13 @@
 html, body {
     height: 100%;
-    overflow: scroll;
+    overflow: hidden;
 }
 body {
     margin: 8px 8px -8px 8px;
 }
+body > .ember-view {
+    height: 100%;
+  }
 .main-logo {
     max-width: 25%;
 }
@@ -251,6 +254,9 @@ background-color: #00FF99;
 }
 .user-select-none {
     user-select: none;
+}
+.scroll {
+    overflow: scroll;
 }
 @media (orientation: portrait) {
     .main-logo {

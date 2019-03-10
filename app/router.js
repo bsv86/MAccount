@@ -14,6 +14,7 @@ Router.map(function () {
   this.route('managers-data');
   this.route('planing');
   this.route('ia-case', { path: '/ia/:id' });
+  this.route('folders');
 });
 
 export default Router;

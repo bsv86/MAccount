@@ -6,33 +6,18 @@ export default Component.extend({
     store: inject('store'),
     placeholder: 'Выберите значение',
     value: null,
-    list: null,
-    show: false,
-    variant: 'select',
-    realValue: null,
+    list: null, // список выбора
+    isRef: true, // это ссылка
 
     didReceiveAttrs() {
-        if (this.get('value.content')) {
-            this.set('realValue', this.value.content);
-        } else {
-            this.set('realValue', this.value);
-        }
+        this.set('isRef', this.get('value.then') != undefined);
     },
 
     actions: {
 
-        toggleDropdown() {
-            this.toggleProperty('show');
-        },
-
-        selectValue(selectedValue) {
-            this.set('value', selectedValue);
-            this.set('show', false);
-        },
-
-        selectID(id) {
-            this.set('value', this.store.peekRecord(this.list.modelName, id));
-            this.set('show', false);
+        selectValue(value) {
+            this.set('value', this.isRef && this.store.peekRecord(this.list.modelName, value) || value);
         }
+
     }
 });

@@ -1,0 +1,20 @@
+<div class="flex height100">
+
+    <div class="min-width-9em scroll height100">
+        <div class="flex-column padding-top-1em">
+            <div class="margin-025em"><a href="#" {{action "createFolder"}}>Создать папку</a></div>
+            {{#each model.folders as |folder|}}
+                <div class="margin-025em user-select-none"><a href="#" {{action "selectFolder" folder}}>{{folder.наименование}}</a></div>
+            {{/each}}
+        </div>
+    </div>
+
+    {{#if currentFolder}}
+        <div class="flex-column user-fields">
+            {{input class="margin-025em" value=currentFolder.наименование placeholder="Наименование"}}
+            {{#input-field class="margin-025em" placeholder="Выберите город" value=currentFolder.город list=model.cities}}{{/input-field}}
+            <button class="margin-top-1em width100" {{action "saveCurrentFolder"}}>Сохранить изменения</button>
+        </div>
+    {{/if}}
+
+</div>
