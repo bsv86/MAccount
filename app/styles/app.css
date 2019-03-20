@@ -1,19 +1,17 @@
 html, body {
     height: 100%;
-    overflow: hidden;
-}
-body {
-    margin: 8px 8px -8px 8px;
+    margin: 0;
 }
 body > .ember-view {
     height: 100%;
+    display: flex;
+    flex-direction: column;
   }
 .main-logo {
     max-width: 25%;
 }
 .flex {
     display: flex;
-    margin: 0 0 5px 0;
 }
 .max-width-4em {
     max-width: 4em;
@@ -257,6 +255,15 @@ background-color: #00FF99;
 }
 .scroll {
     overflow: scroll;
+}
+.header {
+    padding: 8px;
+    display: flex;
+    flex-shrink: 0;
+}
+.footer {
+    padding: 8px;
+    overflow: auto;
 }
 @media (orientation: portrait) {
     .main-logo {

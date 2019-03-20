@@ -2,23 +2,23 @@
     <div class="center"><img style="height: 25vh; margin-top: 1em;" alt="Загрузка..." src="images/loading.gif"></div>
 {{else}}
     <div style="display: flex; flex-direction: column; width: fit-content; margin-top: 1em;">
-        <div class="flex">
+        <div class="flex margin-025em">
             <div class="caption">Категория:</div>
             {{#input-field class="width-100" tagName="" list=Core.leadCategories value=category}}{{/input-field}}
         </div>
-        <div class="flex">
+        <div class="flex margin-025em">
             <div class="caption">Дорожный патруль:</div>{{input type="checkbox" class="margin-left-0" checked=roadPatrol}}
         </div>
-        <div class="flex">
+        <div class="flex margin-025em">
             <div class="caption">ФИО клиента:</div>{{input class=(if name "width100" "width100 back-red") value=name}}
         </div>
-        <div class="flex">
+        <div class="flex margin-025em">
             <div class="caption">Номер телефона:</div>{{input class=(if phone "width100" "width100 back-red") value=phone}}
         </div>
-        <div class="flex">
+        <div class="flex margin-025em">
             <div class="caption">Комментарий:</div>{{textarea rows=10 class="width100" value=comment}}
         </div>
-        <div class="flex">
+        <div class="flex margin-025em">
             <div class="caption">&nbsp;</div>
             <input class="width100" type="file" id="sendingFiles" multiple />
         </div>

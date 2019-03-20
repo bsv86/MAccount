@@ -1,5 +1,5 @@
-{{#if Core.auth.loggedIn}}
-    <div style="display: flex;">
+<div class="header">
+    {{#if Core.auth.loggedIn}}
         <a class="user-select-none" href="#" {{action "showUserMenu"}}><div>{{Core.username}}</div></a>
         <div style="margin: 0 auto;">{{#link-to 'index'}}<img style="max-height: 3em;" src="images/law.png">{{/link-to}}</div>
         {{#if userMenu}}
@@ -7,10 +7,12 @@
                 <button class="width100" {{action "logout"}}>Выйти</button>
             </div>
         {{/if}}
-    </div>
-{{/if}}
+    {{/if}}
+</div>
 
-{{outlet}}
+<div class="footer">
+    {{outlet}}
+</div>
 
 {{#each Core.messages as |message|}}
     {{#show-message text=message.text caption=message.caption className=message.className}}{{/show-message}}
