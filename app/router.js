@@ -12,9 +12,9 @@ Router.map(function () {
   this.route('login');
   this.route('user-admin');
   this.route('managers-data');
-  this.route('planing');
-  this.route('ia-case', { path: '/ia/:id' });
-  this.route('folders');
+  // this.route('planing');
+  // this.route('ia-case', { path: '/ia/:id' });
+  // this.route('folders');
 });
 
 export default Router;
