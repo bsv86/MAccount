@@ -1,5 +1,11 @@
-<div class="margin-top-1em flex">
-    <div class="vertical-center">Количество выданных папок за день:</div>
+<div class="margin-top-1em managers-folders">
+    <div class="vertical-center">Количество выданных папок по НО за день:</div>
+    {{input classNames="margin-left-1em max-width-4em" value=foldersCountNO}}
+    <button class="margin-left-1em" {{action "saveData" "Оценка" foldersCountNO}}>Сохранить</button>
+    <div style="height: 1em;"/>
+    <div style="height: 1em;"/>
+    <div style="height: 1em;"/>
+    <div class="vertical-center">Количество выданных папок по судебным делам за день:</div>
     {{input classNames="margin-left-1em max-width-4em" value=foldersCount}}
-    <button class="margin-left-1em" {{action "saveData"}}>Сохранить</button>
+    <button class="margin-left-1em" {{action "saveData" "Арбитраж" foldersCount}}>Сохранить</button>
 </div>

@@ -68,6 +68,10 @@ body > .ember-view {
 .margin-right {
     margin: 0 0 0 auto;
 }
+.managers-folders {
+    display: grid;
+    grid-template-columns: max-content max-content max-content;
+}
 .report-table {
     display: grid;
     margin-top: 2em;

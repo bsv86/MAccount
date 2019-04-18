@@ -1,5 +1,6 @@
 import Component from '@ember/component';
 import { later } from '@ember/runloop';
+import { cancel } from '@ember/runloop';
 
 export default Component.extend({
 
@@ -7,6 +8,7 @@ export default Component.extend({
     caption: '',
     show: false,
     className: '',
+    closerOnWait: null,
 
     didInsertElement() {
         later(this, 'showMessage', 100)
@@ -14,7 +16,7 @@ export default Component.extend({
 
     showMessage() {
         this.set('show', true);
-        later(this, 'closeOnWait', 2500);
+        this.set('closerOnWait', later(this, 'closeOnWait', 2500));
     },
 
     closeOnWait() {
@@ -28,6 +30,7 @@ export default Component.extend({
 
     actions: {
         close() {
+            cancel(this.closerOnWait);
             this.set('show', false);
             later(this, 'close', 700);
         }
